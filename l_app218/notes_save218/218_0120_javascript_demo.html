@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>p {border: 2px green solid; padding: 5px;}</style>
+    <title>0120 JS javascript </title>
+</head>
+<body>
+    <h2>0120 JS javascript demo</h2>
+    <p>
+        __# javascript variable value and output & install <br>--------------------<br>
+        __# declare variable <br>
+        > var person; <br>
+        <br>
+        __# assign value to person variable <br>
+        > var person = "John" <br>
+        <br>
+        > person; <br>
+        | .. 'John' <br>
+        <br>
+        __# to print output <br>
+        > console.log("hello", person); <br>
+        <br>
+        __# make 2nd variable <br>
+        > var greeting = "hello" <br>
+        <br>
+        console.log(greeting, person) <br>
+        | .. Hello John <br>
+        <br><br>
+    </p>
+    <p>
+        __#0120 JS comments single & multi-line  <br>----------------<br>
+        single-line comment --> // then-comments-here <br>----------------------<br>
+        // this is a comment! <br>
+        <br>
+        __# multi-line comment -> /* */ <br>
+        /* <br> multi-line <br> comment <br> here */ <br>
+        <br><br>
+    </p>
+    <p>
+        __#0121  javascript selectors .. to find specific objects<br>----------------------------<br>
+        querySelector() <br>
+        This querySelector() method returns the first element in the document that matches the selector <br>
+        <br>
+        querySelectorAll() <br>
+        This querySelectorAll() method returns all elements in the document that match the selector. <br>
+        <br>
+        getElementById() <br>
+        This getElementById() method returns a specific element whose id matches the selector. <br>
+        <br>
+        getElementsByClassName() <br>
+        This getElementsByClassName() method returns all elements in the document that has the class specified in the selector.  <br>
+        <br><br>
+        (DOM) document object model <br>---------------------<br>
+        framework browser uses to read /store a webpage <br>
+        <br>
+        __# ex <br>-------<br>
+        > document <br>
+        | <br>
+        __# query search for < p> <br>------------------#will show the paragraph w/ dropdown arrow for contents of < p> <br>
+        | document.querySelector('p') <br>
+        | .. < p class="txt"> .. < /p> <br>
+        <br>
+        __# query search for < a> <br>-----------------<br>
+        | document.querySelector('a') <br>
+        | .. < a href="https://www.example.com"> < /a> <br>
+        <br>
+        __# query search for all < p> in the document <br>------------------------# NodeList(2) has dropdown menu<br>
+        | document.querySelectorAll('p') <br>
+        | .. NodeList(2) [p.txt, p.txt] <br>
+        <br>
+        __# query search for by Id <br>-----------------<br>
+        | document.getElementById('heading') <br>
+        | .. < h1 id='heading'> < /h1> <br>
+        <br><br>
+        __# query search for by class name <br>-----------------<br>
+        | document.getElementByClassName('txt') <br>
+        | .. HTML Collection(2) [p.txt, p.txt] <br>
+        <br><br>
+
+
+
+
+
+
+        <br><br>
+    </p>
+
+</body>
+</html>

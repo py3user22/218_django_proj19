@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>     p {border: 2px green solid; padding: 5px;} h3 {color: orange;} .div {color: red; font-size: 20px;}
+                .pret {color: blue;}
+    </style>
+    <title>0120 css web layout</title>
+</head>
+<body>
+    <a href="#botp" id="topg">link to page bottom</a>
+    <header>
+        <h2>0120 css web layout - flexbox and grids</h2>
+    </header>
+    <main>
+        <p>
+            __#0120 css edit <br>--------------------<br>
+            <sup>CSS</sup> #sample { display: block; } <br>
+            <sup>CSS</sup> #sample { display: flex; } <br>
+            <sup>CSS</sup> #sample { display: grid; } <br>
+            <br><br>
+            __#note: flexbox ..aka. flebible box model <br>
+            adds responsiveness to CSS w/ float elements & positioning <br>
+            1-dimensional<br>-------------<br>
+            the flex box container will arrange items in either column/row. Can be edited to shrink/grow <br>
+            <br><br>
+            __#note: grid <br>------------------------<br>
+            2-dimensional<br>---------------<br>
+            __
+            <br><br>
+            __# notes flexbox <br>-----------------------3 common uses of flexbox<br>
+            1- search bars <br>2- navigation bar <br>3-image gallery <br><br>
+        </p>
+        <p>
+            __# ex0120 <a href="div" class="div"> < div> < /div> </a> is for block level, will seperate to own line the text in it <br>
+            __# search bar code <br>
+            <br>
+            < body> <br>
+            | .. < div class"container"> <br>
+            | ...... < img class="icon" src="search.svg" alt="Sample image"> <br>
+            | ...... < input class="searchBox" type="search" name="search" placeholder="Enter text here.." > <br>
+            | ...... < input type="submit" value="Search" class="searchButton" > <br>
+            | .. < /div> <br>
+            < /body> <br>
+            <br><br>
+            <sup>CSS</sup><br>
+            .container {<br>
+            | .. display: inline-flex; <br>
+            | .. flex: 1 1 300px; <br>
+            | .. border-radius: 10px; <br>
+            | .. border: 1px solid blue; <br>
+            | .. overflow: hidden; <br>} <br>
+
+            <br><br>
+            __# notes: <br>
+            inline-flex<br>--------- makes the flex container behave like inline element <br>
+            <br>
+            overflow<br>-------- clips the overflow content, ex is text into search query<br>
+        </p>
+        <p>
+            __# ex.0120 navigation menu <br>------------------------<br>
+            < body> <br>
+            | .. < ul class="container"> <br>
+            | ...... < li> < a href="#">Home < /a>< /li> <br>
+            | ...... < li> < a href="#">Culinary Blog < /a>< /li> <br>
+            | ...... < li> < a href="#">Menu < /a>< /li> <br>
+            | ...... < li> < a href="#">Contact Us < /a>< /li> <br>
+            | .. < /ul> <br>
+            < /body> <br>
+            <br><br>
+            ____# <sup>CSS</sup> edits-----------------------<br>
+            * { margin: 0; padding: 0; } <br>
+            <br>
+            .container { <br>
+            | .. background-color: black; <br>
+            | .. display: flex; <br>
+            | .. flex-flow: row wrap; <br>
+            | .. justify-content: stretch; <br>} <br>
+            <br>
+            .container li { <br>
+            | .. list-style-type: none; <br>}<br>
+            <br>
+            .container a { <br>
+            | .. display: inline-block; <br>
+            | .. padding: 25px; <br>
+            | .. margin: 0 25px; <br>
+            | .. text-align: center; <br>
+            | .. color: tan; <br>} <br>
+            <br>
+        </p>
+        <p>
+            __# image gallery <br>--------------------------------<br>
+            < body> <br>
+            | .. < div class="container"> <br>
+            | ...... < img class="item" src="bruschetta.jpg" alt="Sample image" style="width: 240px; height: 180px;"> <br>
+            | ...... < img class="item" src="greek_salad.jpg" alt="Sample image" style="width: 240px; height: 180px;"> <br>
+            | ...... < img class="item" src="pasta.jpg" alt="Sample image" style="width: 240px; height: 180px;"> <br>
+            | ...... < img class="item" src="Grilled fish.jpg" alt="Sample image" style="width: 240px; height: 180px;"> <br>
+            | ...... < img class="item" src="lemon dessert.jpg" alt="Sample image" style="width: 240px; height: 180px;"> <br>
+            | ...... < img class="item" src="salad.jpg" alt="Sample image" style="width: 240px; height: 180px;"> <br>
+            | .. < /div> <br>
+            < /body> <br>
+            <br><br>
+            __# CSS edit for image gallery <br>---------------------------<br>
+            * { margin: 0; padding: 0; box-sizing: border-box; } <br>
+            <br>
+            img { border: 0; } <br>
+            <br>
+            .container {<br>
+            | .. display: flex; <br>
+            | .. flex-wrap: wrap; <br>
+            | .. justify-content: space-between <br>
+            | .. padding: 5px; <br>} <br>
+            <br>
+            .item { margin: 5px; } <br>
+            <br><br>
+        </p>
+        <p>
+            __# attibute selectors <br>---------------------to choose all elements that have a defined class<br>
+            <h3><b><i>a[class] { color: darkgreen; } </i></b> </h3><br>
+
+            __# to target certain href that have a common value <br>------------------------<br>
+            <h3><b><i>a[href*="meta"] { color: darkgreen; } </i></b> </h3><br>
+
+            __# to target a specific url  <br>---------------------<br>
+            <h3><b><i>a[href="https://github.com/py3user22/0118_mysql_notes.git"] { color: darkgreen; } </i></b> </h3><br>
+        </p>
+        <a href="#botp" id="topg">link to page bottom</a>
+        <p>
+            __# nth-of-type & nth-child selectors demo <br>------------------------<br>
+            __#ex0120 unorder list and some list items<br>
+            the < ul> element is parent tag, the < li> element are the children <br>
+            <br>
+            < ul> <br>
+            | .. < li> < /li> <br>
+            | .. < li> < /li> <br>
+            | .. < li> < /li> <br>
+            < /ul> <br>
+
+            <br><br>
+            __# ex1 nth-of-type selectors <br>--------------------------<br>
+            <sup>CSS|</sup> li:nth-of-type(2) { color: aqua; } <br>
+            <br><br>
+
+            __# ex2 nth-child selectors <br>--------------------------<br>
+            <sup>CSS|</sup> li:nth-chile(2) { color: aqua; } <br>
+            <br><br>
+        </p>
+        <p>
+            __# group selectors <br>-------------------------<br>
+            h1, p { <br>
+            | .. color: blue; <br>
+            | .. text-align: center; } <br>
+            <br><br>
+            __# font size chart & notes <br>---------------------common sizes demo<br>
+            in | inches | 1in = 2.54cm = 96px <br>
+            pc | picas | 1pc = .2 of 1" <br>
+            pt | point | 1pt = .014 of 1" <br>
+            px | pixel | 1px = .01 of 1" <br>
+            <br><br>
+            __# CSS to rotate text counter-clockwise <br>--------------------<br>
+            transform: rotate(-60deg); <br>
+            <br><br>
+        </p>
+        <p>
+            __#0120 block and inline elements <br>---------------------------<br>
+            block level elements<br>| .. stack on top and on new lines <br><br>
+            inline elements <br>| .. will stay on same line and go horizontal <br><br>
+            __#notes <br>-------------------<br>
+            < span> < /span> is for inline text input, to keep on the same line horizontally <br><br>
+            <a href="div" class="div"> < div> < /div> </a> is for block level, will seperate to own line the text in it <br><br>
+            < body> <br>
+            | .. < div> <br>
+            | ...... < span> < /span> <br>
+            | ...... < span> < /span> <br>
+            | ...... < span> < /span> <br>
+            | .. < /div> <br>
+            < /body> <br>
+            <br><br>
+        </p>
+
+        <p>
+            __# CSS to change the < div id="middle">  to inline <br>--------------------<br>
+            <sup>CSS|</sup> #middle { display: inline; } <br>
+            <br><br>
+
+            __# CSS to change the < div id="middle">  to block <br>--------------------<br>
+            <sup>CSS|</sup> #middle { display: block; } <br>
+            <br><br>
+        </p>
+        <p>
+            __#ex0120 > __# ex0120 <a href="div" class="div"> < div> < /div> </a> is for block level, will seperate to own line the text in it <br>
+
+            create a grid  <br>-------------------------<br>
+            < body> <br>
+            | .. < div class="container"> <br>
+            | ...... < div class="box a">A < /div> <br>
+            | ...... < div class="box a">B < /div> <br>
+            | ...... < div class="box a">C < /div> <br>
+            | ...... < div class="box a">D < /div> <br>
+            | ...... < div class="box a">E < /div> <br>
+            | .. < /div> <br>
+            < /body> <br>
+            <br><br>
+            __# edit CSS for grid <br>----------------<br>
+            .container {<br>
+            | .. display: grid; <br>
+            <s>| .. grid-template-columns: 100px 100px 100px; </s> <br>
+            | .. grid-template-columns: repeat(3, 100px); <br>
+            <s>| .. grid-template-rows: 2fr 1fr; </s> <br>
+            <s>| .. grid-auto-rows: 100px; ------> auto-rows function </s> <br>
+            | .. grid-auto-rows: minmax(150px, auto); ------> minmax function <br>
+            | .. grid-gap: 10px; <br>
+            | .. background-color: lightblue; <br>
+            }  <br>
+            <br><br>
+        </p>
+
+
+
+        <p class="pret">
+            __#ex0120 > __# ex0120 <a href="div" class="div"> < div> < /div> </a> is for block level, will seperate to own line the text in it <br>
+
+            create a grid > lab w2 <br>-------------------------<br>
+            < body> <br>
+            | .. < div class="container"> <br>
+            | ...... < header class="header"> Header < /header> <br>
+            | ...... < main class="main"> Content < /main> <br>
+            | ...... < div class="sidebar left"> Sidebar < /div> <br>
+            | ...... < div class="sidebar right"> Sidebar < /div> <br>
+            | ...... < footer class="foot"> Footer < /footer>
+            | .. < /div> <br>
+            < /body> <br>
+            <br><br>
+            __________________________________________ <br>
+            __# 0120 lab > style.css edit <br>------------------------<br>
+            .container {<br>
+            /* Add rules here */ <br>
+            display: grid; <br>
+            max-width: 900px; <br>
+            min-height: 50vh; <br>
+            grid-template-columns: 100%; <br>
+            grid-template-rows: auto auto 1fr auto auto; <br>
+            grid-template-areas: "header" <br>
+            | .......... "left" <br>
+            | .......... "main" <br>
+            | .......... "right" <br>
+            | .......... "footer"; <br>
+            } <br>
+            <br>
+            /* Add media rules for container class below */ <br>
+            @media (min-width: 440px) { <br>
+            | .. .container { <br>
+            | .. /* Add rules here */ <br>
+            | .. grid-template-columns: 150px 1fr 150px; <br>
+            | .. grid-template-rows: auto 1fr auto; <br>
+            | .. grid-template-areas: "header header header" <br>
+            | ................ "left main right" <br>
+            | ................ "footer footer footer"; <br>
+            | .. } <br>
+            } <br>
+            <br>
+
+            /* Properties for other selectors */ <br>
+            .header { <br>
+            | .. grid-area: header; <br>
+            | .. padding: 10px; <br>
+            | .. background-color:black; <br>
+            | .. color: #fff; <br>
+            | .. text-align: center; <br>
+            } <br>
+            <br>
+            .main { <br>
+            | .. grid-area: main; <br>
+            | .. padding: 25px; <br>
+            } <br>
+            <br><br>
+            .left { <br>
+            | .. grid-area: left; <br>
+            | .. background-color: peachpuff; <br>
+            } <br>
+            <br>
+            .right { <br>
+            | .. grid-area: right; <br>
+            | .. } <br>
+            <br>
+            .footer { <br>
+            | .. grid-area: footer; <br>
+            | .. padding: 10px; <br>
+            | .. background-color:black; <br>
+            | .. color: #fff; <br>
+            | .. text-align: center; <br>
+            } <br>
+            <br>
+            .sidebar { <br>
+            | .. padding: 25px; <br>
+            | .. background-color:darkcyan; <br>
+            } <br>
+
+
+
+
+
+
+        </p>
+
+
+
+        <h2>__notes: fr ..aka. fraction divides the grid into new rows </h2>
+        <p>
+            ___# cheat sheet  grids & flexbox common CSS terms <br>----------------------------<br>
+            ___# alignment syntax <br>
+            <a href="colo" class="colo">justify-items:</a> <br>
+            start | center | end | stretch <br>
+            <br>
+            <a href="colo" class="colo">align-items:</a> <br>
+            start | center | end | stretch <br>
+            <br>
+            <a href="colo" class="colo">place-items:</a> <br>
+            start | stretch /**/ <br>
+            <br>
+            __# justification syntax demo <br>---------------------------<br>
+            <br>
+            <a href="colo" class="colo">justify-content:</a> <br>
+            start | stretch |center | end | space-between | space-evenly | space-around <br>
+            <br>
+            <a href="colo" class="colo">align-content:</a> <br>
+            start | stretch |center | end | space-between | space-evenly | space-around <br>
+            <br>
+            <a href="colo" class="colo">place-content:</a> <br>
+            start | center <br>
+        </p>
+        <p>
+            __# CSS terms for flexbox <br>-----------------------<br>
+            <a href="colo" class="colo">flex-direction:</a> <br>
+            row | row-reverse | column | column-reverse  <br>
+            row : organized from left to right
+            <br>
+            row-reverse: organized from right to left <br>
+            column: organized from top to bottom <br>
+            column-reverse: organized from bottom to top. <br>
+            <br>
+
+            <a href="colo" class="colo">flex-wrap:</a> <br>
+            wrap | nowrap <br>
+            The standard layout is to plot the elements from left to right in a straight line.<br>The wrap feature allows you customize this to match the size of the window displaying the page. <br><br>
+            wrap: Automatically wrap the items with as the window space gets smaller.  <br><br>
+            Nowrap: Default setting, items remain rigid and don’t respond  to adjustments made to the window size. <br>
+
+            <br><br>
+        </p>
+        <p>
+            __# ex0121 pseudo-elements CSS <br>-------------------- using double colon :: <br>
+            ::first-letter <br>
+            used to change the color of just the 1st letter of the ex. text <br>
+            <br>
+            < body> <br>
+            | .. < ul> <br>
+            | ...... < li> Based < /li> <br>
+            | ...... < li> The < /li> <br>
+            | ...... < li> Little < /li> <br>
+            | .. < /ul> <br>
+            <br><br>
+            __# CSS edits <br>-----------<br>
+            li::first-letter { <br>
+            | .. color: coral; <br>
+            | .. font-size: 1.3em; <br>
+            | .. font-weight: bold; <br>
+            | .. line-height: 1; <br>
+            }<br>
+            <br><br>
+            __# ::first-line <br>------------used to change the 1st line of each bullet point color <br>
+            li::first-line {<br>
+            | .. color: lightseagreen; <br>
+            | .. text-decoration: underline; <br>
+            | .. line-height: 1; <br>
+            } <br>
+            <br><br>
+            __# to highlight a section in the text use the ::selection element <br>-----------------<br>
+            li::selection {<br>
+            | .. color: brown; <br>
+            | .. background-color: tan; <br>
+            | .. line-height: 1; <br>
+            }<br>
+            <br><br>
+            __# to add a diffrent icon for the < li> from circle to <> icons for list <br>-------------------<br>
+            li::marker {<br>
+            | .. color: cornflowerblue; <br>
+            | .. content: '<> '; <br>
+            | .. font-size: 1.1em; <br>
+            } <br>
+            <br><br>
+            __# to add to a certain id="", as in insert into the paragraph w/o actuall adding the html code into section <br>-----------------------<br>
+            < body> <br>
+            | .. < p id="tips"> para1 < /p> <br>
+            | .. < p> para2 < /p> <br>
+            | .. < p id="tips"> para3 < /p> <br>
+            < /body> <br>
+            <br><br>
+            __# CSS edits <br>-----------<br>
+            #tips::before {<br>
+            | .. content: "Tip:"; <br>
+            | .. background: darkkhaki; <br>
+            | .. color: grey;<br>
+            | .. border-radius: 10%
+            }<br>
+            <br>
+            #tips::after {<br>
+            | .. content: " 0121!"; <br>
+            }<br>
+            <br>
+            output: <br>
+            Tip: para1 0121! <br>
+            para2 <br>
+            Tip: para3 0121! <br>
+            <br><br>
+
+        </p>
+
+
+
+
+
+        <a href="#topg" id="botp">link to page top</a>
+    </main>
+</body>
+</html>

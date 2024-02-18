@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style> p {border: 2px green solid; padding: 5px;} </style>
+    <title>Document</title>
+</head>
+<a href="#botp" id="topg">link to page bottom</a>
+
+<body>
+    <h2>0121 JS scoping w/ var,let, const demo</h2>
+    <p>
+        __# global & local scope <br>-----------------<br>
+        Scope <br>--------relates to code accessibility, determines which part of code are accessible by other parts <br>
+        global scope is outside and above functions <br>
+        local scope is inside the functions <br>
+        <br><br>
+        __# ex0121 ..# Global scope > outside of functions <br>
+        var num1 = 10;   <br>
+        <br>
+        __# local scope inside of functions <br>----------------------<br>
+        function score() { <br>
+        | .. var num2 = 20; <br>
+        | .. console.log(num2); // 20 <br>} <br>
+        <br><br>
+        __# block scope <br>-------------------<br>
+        a variable declared in a block of code is only accessible inside that block. <br>
+        all other code outside the block cant access it. <br>
+        block scope is auto made when use let, const to make a variable <br>
+        <br><br>
+        | Global scope | <br>
+        let color = 'red'; <br>
+        <br>
+        | Block scope is inside the { } brackets <br>
+        if (color == 'red') {<br>
+        | .. let color == 'blue'<br>} <br>
+        <br><br>
+    </p>
+    <p>
+        __# notes about let, const <br>
+        tip: use let if the value might change in the future <br>
+        use const if the value will never change <br>
+        both let/const you cant use prior to declaration of.
+        <br><br>
+    </p>
+    <p>
+        __#0121 functions JS <br>------------------------ex1<br>
+        function myFunc() { <br>
+        | .. console.log("Hola Mundo!"); <br>} <br>
+        <br>
+        __# call the function <br>--------------<br>
+        myFunc(); <br>
+        | .. Hola Mundo! <br>
+        <br>
+        __# add two numbers <br>
+        var a = 114; <br>
+        var b = 38*14; <br>
+        var c = a + b; <br>
+        <br>
+        console.log(c) <br>
+        | .. 646 <br>
+        <br><br>
+        __# place the above code into a function block   <br>-----------------------note: no values called in () <br>
+        function addTwoNums() { <br>
+        | .. // enter code here <br>
+        | .. var a = 114; <br>
+        | .. var b = 38*14; <br>
+        | .. var c = a + b; <br>
+        | .. console.log(c); <br>
+        } <br>
+        <br>
+        __# call the funciton <br>
+        addTwoNums(); <br>
+        | .. 646 <br>
+        <br><br>
+        __# rewrite the code to accept values to the function <br>-------------------------<br>
+        function addTwoNums(a,b) {<br>
+        | .. var c = a + b; <br>
+        | .. console.log(c); <br>
+        } <br>
+        <br>
+        __# call the function <br>
+        addTwoNums(114 + 532); <br>
+        | .. 646 <br>
+        <br><br>
+    </p>
+    <p>
+        __# JS using dom for event handling recording <br>---------------------<br>
+        const target = document.querySelector('body') <br>
+        <br>
+        function handleClick() { <br>
+        | .. console.log('clicked the body') <br>
+        } <br>
+        <br>
+        target.addEventListerer('click', handleClick) <br>
+        <br>
+        function handleClick2() { <br>
+        | .. console.log('clicked the heading') <br>
+        } <br>
+        <br><br>
+        < body> <br>
+        | .. < div> <br>
+        | ...... < h1 onclick="handleClick2()"> example0121 < /h1> <br>
+        | .. < /div> <br>
+        < /body> <br>
+        <br><br>
+    </p>
+    <p>
+        __#0121 ex1.. capture user input in JS using built-in method ' prompt() ' <br>---------------------<br>
+        let answer = prompt('Whats your name?'); <br>
+        if (typeof(answer) === 'string') { <br>
+        | .. var h1 = document.createElement('h1') <br>
+        | .. h1.innerText = answer; <br>
+        | .. document.body.innerText = ''; <br>
+        | .. document.body.appendChile(h1); <br>
+        } <br>
+        <br><br>
+        __# ex2 dynamically adding the input element, and adding a active listener to update the field <br>
+        <br>
+        var h1 = document.createElement('h1') <br>
+        h1.innerText = "Type into the input to make changes to text" <br>
+        <br>
+        var input = document.createElement('input') <br>
+        input.setAttribute('type', 'text') <br>
+        <br>
+        document.body.innerText = ''; <br>
+        document.body.appendChild(h1); <br>
+        document.body.appendChild(input); <br>
+        <br>
+        input.addEventListener('change', function() { <br>
+        | .. h1.innerText = input.value <br>
+        }) <br>
+
+    </p>
+    <p>
+        __# ex3 JS interactivity <br>--------------------<br>
+        const button = document.getElementById('weather') <br>
+        const weather_info = document.getElementById('weather-info') <br>
+        <br>
+        button.addEventListener('click', function() { <br>
+        | .. fetch('https://wttr.in?format=j1') <br>
+        | ...... .then(response => response.json()) <br>
+        | ...... .then(data => {<br>
+        | .......... const temp = data.current_condition[0].temp_C <br>
+        | .......... const city = data.nearest_area[0].areaName[0].value <br>
+        | .......... weather_info.innerHTML = 'Temperature in ${city} is ${temp} *C' <br>
+        | ...... }) <br>
+        }) <br>
+    </p>
+    <p>
+        __# lab quiz <br>----------<br>
+        1. client-side <br>
+        2. method <br>
+        3. post, get <br>
+        4. /* comment in CSS */ <br>
+        5. last written rule will be applied <br>
+        6. grid-template-areas, grid-auto-flow, <br>
+        7: :: double colon  <br>
+        | -->> read: pseudo-elements <br>
+        8. =
+        9. <br>
+        | --Xgoodbye > video operators <br>
+        10. innerText() <br>
+        <br><br>
+        __#0121 lab2 quiz <br> ------------------<br>
+        1. npm, yarn <br>
+        2. avoid file name ext, use lowercase letters, forward slash, <br>
+        3. ORM object relational mapping <br>
+        4. f
+        5.  Variables are part of the DTL syntax and are added inside DTL tags such as {{ }} for example {{ section.title }}
+        | .. filters, tags, <br><br>
+        render() __# is not part of the DTL syntax.<br>
+        It is a function that transmits data to the template inside the Django project,<br>
+        but it is written in Python code inside the view function. <br>
+
+
+        <br><br>
+    </p>
+
+
+
+    <a href="#topg" id="botp">link to page top</a>
+</body>
+</html>

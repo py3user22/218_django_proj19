@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>p {border: 2px orange solid; padding: 5px;}</style>
+    <title>Document</title>
+</head>
+<body>
+    <h2>0119 forms and validation demo</h2>
+    <p>
+        ___#0119 forms & validation demo <br>-----------------------input types:<br>
+        < input type = "email"> <br>
+        <br>
+        < input type = "tel"> <br>
+        <br>
+        < input type = "url"> <br>
+        <br>
+        < input type = "date"> <br>
+        <br>
+        < input type = "time"> <br>
+        <br>
+        < input type = "number"> <br>
+        <br>
+        < input type = "range"> <br>
+        <br>
+        < input type = "color"> <br>
+        <br><br>
+        ___# 0119 required attribute <br>
+        < input type="text" id="username" name="username" required> <br>
+        <br><br>
+    </p>
+    <p>
+       ___# button type <br>-------------------<br>
+       < input type="button" value="Click me" onclick="msg()" />
+         <br>
+       __# ex2 can use button tag <br>-----------------------<br>
+       < button onclick="alert('Sure want to continue?')"> <br>
+       | .. < img src="my_pic0119.jpg" alt="Submit the form" height="64" width="64"> <br>
+       < /button> <br>
+        <br><br>
+    </p>
+    <p>
+        __# checkbox type <br>--------------------<br>
+        < input type="checkbox" id="dog" name="dog" value="Dog"> <br>
+        < label for="dog">I like dogs< /label> <br>
+        < input type="checkbox" id="cat" name="cat" value="Cat"> <br>
+        < label for="cat">I like cats< /label> <br>
+         <br><br>
+    </p>
+    <p>
+        __# radio type <br>---------------------<br>
+        < input type="radio" id="light" name="theme" value="Light"> <br>
+        < label for="light">Light< /label>  <br>
+        < input type="radio" id="dark" name="theme" value="Dark"> <br>
+        < label for="dark">Dark< /label> <br>
+        <br><br>
+    </p>
+    <p>
+        ___# submit type <br>-----------------------<br>
+        < form action="myserver.com" method="POST"> <br>
+         ... <br>
+        < input type="submit" value="Submit" />
+        < /form> <br>
+        <br><br>
+        ___# password type <br>----------------------<br>
+        < label for="pwd">Password:< /label>
+        < input type="password" id="pwd" name="pwd"> <br>
+        <br><br>
+        __# text type <br>------------------------<br>
+        < label for="fname">First name:< /label>  <br>
+        < input type="text" id="fname" name="fname"> <br>
+        <br><br>
+        __# date type <br>----------------------<br>
+        < label for="dob">Date of birth:< /label> <br>
+        < input type="date" id="dob" name="date of birth"> <br>
+        <br><br>
+        __#datetime-local type <br>---------------------<br>
+        < label for="birthdaytime">Birthday (date and time):< /label> <br>
+        < input type="datetime-local" id="birthdaytime" name="birthdaytime"> <br>
+        <br><br>
+        __email type <br>----------------------<br>
+        < label for="email">Enter your email:< /label> <br>
+        < input type="email" id="email" name="email"> <br>
+        <br><br>
+        __# file type <br>------------------------<br>
+        < label for="myfile">Select a file:< /label> <br>
+        < input type="file" id="myfile" name="myfile"> <br>
+        <br><br>
+        __# hidden type <br>------------------------<br>
+        < input type="hidden" id="custId" name="custId" value="3487">
+        <br><br>
+        __# image type <br>------------------------<br>
+        < input type="image"src="submit_img.png" alt="Submit" width="48" height="48"> <br>
+        <br><br>
+        __# number type <br>---------------------<br>
+        < input type="number" id="quantity" name="quantity" min="1" max="5"> <br>
+        <br><br>
+        __# range type <br>--------------------<br>
+        < label for="volume">Volume:< /label> <br>
+        < input type="range" id="volume" name="volume" min="0" max="10"> <br>
+        <br><br>
+        __#reset type <br>--------------<br>
+        < input type="reset"> <br>
+        <br><br>
+        __#search type <br>-----------------------<br>
+        < label for="gsearch">Search in Google:< /label> <br>
+        < input type="search" id="gsearch" name="gsearch"> <br>
+        <br><br>
+        __# time type <br>--------------------<br>
+        < label for="appt">Select a time:< /label> <br>
+        < input type="time" id="appt" name="appt"> <br>
+        <br><br>
+        __# tel type <br>---------------------<br>
+        < label for="phone">Enter your phone number:< /label> <br>
+        < input type="tel" id="phone" name="phone" pattern="[+]{1}[0-9]{11,14}"> <br>
+        <br><br>
+        __#url type <br>----------------------<br>
+        < label for="homepage">Add your homepage:< /label> <br>
+        < input type="url" id="homepage" name="homepage"> <br>
+        <br><br>
+        __# week type <br>--------------------<br>
+        < label for="week">Select a week:< /label> <br>
+        < input type="week" id="week" name="week"> <br>
+        <br><br>
+        __# month type <br><br>
+        < label for="bdaymonth">Birthday (month and year):< /label> <br>
+        < input type="month" id="bdaymonth" name="bdaymonth" min="1930-01" value="2000-01"> <br>
+        <br><br>
+    </p>
+    <p>
+        __#0119 form submission <br>----------------------ex. Login form <br>
+        __#note: The HTTP POST method is more secure than the HTTP GET method.<br>
+        When a form is submitted using the Post method, the form data is inserted into the content of the HTTP request instead of appended at the end of the URL as is done with the GET method. <br>
+        <br>
+        < form method="GET"> <br>
+        | .. < label for="username"> Username: < /label> <br>
+        | .. < input type="text" id="username" name="username" value="admin">  <br>
+        | .. < label for="password"> Password: < /label> <br>
+        | .. < input type="password" id="password" name="password" value="password"> <br>
+        | .. < input type="submit" value="Log In"> <br>
+        < /form> <br>
+        <br><br>
+    </p>
+    <p>
+        ___#0119 the form submission is determined by 2 attributes: action, method <br>--------------------------<br>
+        <i><b>action</b></i> attribute <br>
+        --> specifies to which web address the form is to be sent <br>
+        --> can be full URL address, absolute path, or reletive path. <br>
+        <br><br>
+        < form action="/login"> < /form> <br>
+        <br>
+
+
+        <br><br>
+    </p>
+</body>
+</html>

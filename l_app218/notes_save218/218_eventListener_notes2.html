@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        p {border: 2px blue dashed; padding: 5px;} .gree {color:green;} .purp {color:purple;}
+    </style>
+    <title>217_eventListener_demo1</title>
+</head>
+<body>
+    <h2>217_eventListener_demo1</h2>
+    <p>
+        ____#book.html add eventListener to the button demo1 <br>------------------------- ex1<br>
+        < form method="post" > <br>
+        | .. { % csrf_token %} <br>
+        | <br>
+        | .. < p>  < /p> <br>
+        | .. < button id="butn" <span style="background-color:yellow;"> onclick="myFunction()" </span> >Click here < /button> <br>
+    < /form> <br>
+        <br><br>
+    < script> <br>
+        <a href="gree" class="gree">
+        function</a> <span style="background-color:yellow;">myFunction()</span> { <br>
+        | .. alert("Submitted the data ok."); <br>
+        } <br>
+    < /script> <br>
+    <br><br>
+    </p>
+    <p>
+        ____#217 update widgets to output date and time to db <br>
+        note: saves to db on booking with this edit, but still needs form edit <br>
+        <br>----------------------------- forms.py<br>
+        <sup> <a href="purp" class="purp">
+            from django.forms.widgets import DateInput, TimeInput <br>
+            from .models import Booking <br>
+            from django import forms <br>
+        </a> </sup>
+        <br>
+        <a href="gree" class="gree"> class </a> BookingForm(models.ModelForm): <br>
+        | .. <a href="gree" class="gree"> class </a> Meta: <br>
+        | ...... model = Booking <br>
+        | ...... fields = '__all__' <br>
+        | ...... widgets = { <br>
+        | .......... 'dateField': DateInput(attrs={'type': 'date'}), <br>
+        | .......... 'timeField': TimeInput(attrs={'type': 'time'}), <br>
+        | ...... } <br>
+
+
+        <br><br>
+    </p>
+    <p>
+        ____#217  <br>-----------------------------<br>
+
+
+        <br><br>
+    </p>
+    <p>
+        ____#217  <br>-----------------------------<br>
+
+
+        <br><br>
+    </p>
+    <p>
+        ____#217  <br>-----------------------------<br>
+
+
+        <br><br>
+    </p>
+</body>
+</html>
